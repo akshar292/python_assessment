@@ -3,7 +3,7 @@ import logging
 LOG_FILE = 'transactions.log'
 
 def setup_logging():
-    """Configures the logging for the application."""
+    
     logging.basicConfig(
         filename=LOG_FILE,
         level=logging.INFO,
@@ -12,10 +12,7 @@ def setup_logging():
     )
 
 def get_validated_numeric_input(prompt, num_type=float):
-    """
-    Prompts the user for numeric input and validates it.
-    Loops until a valid number of the specified type is entered.
-    """
+ 
     while True:
         try:
             value = num_type(input(prompt))
@@ -24,4 +21,5 @@ def get_validated_numeric_input(prompt, num_type=float):
                 continue
             return value
         except ValueError:
+
             print(f"Invalid input. Please enter a valid number.")
